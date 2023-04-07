@@ -10,7 +10,7 @@ if not os.path.exists(new_directory_path):
 for file_name in os.listdir(directory_path):
     if file_name.endswith(".ini"):
         file_path = os.path.join(directory_path, file_name)
-        new_file_path = os.path.join(new_directory_path, file_name.replace(".ini", "_new.ini"))
+        new_file_path = os.path.join(new_directory_path, file_name)
         with open(file_path, "r") as f, open(new_file_path, "w") as new_file:
             for line in f:
                 # Remove any text after a semicolon
@@ -24,3 +24,4 @@ for file_name in os.listdir(directory_path):
                 else:
                     line = " ".join(line.split())
                     new_file.write(line + "\n")
+
